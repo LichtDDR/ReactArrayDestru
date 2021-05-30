@@ -16,15 +16,18 @@ const employee = {
 }
 
 function App() {
-  const { name, job, address, datas } = employee;
-  const { state, country, number } = address;
-  const { salary: money } = datas;
+  const { 
+    name, 
+    job, 
+    address: { country, state, number }, 
+    datas: { salary }
+  } = employee;
   return (
     <div className="App">
       <header className="App-header">
       <h2>{name}</h2>
       <p>Charge: {job}</p>
-      <p>{`Lives in ${state}, ${country} and his number is ${number} and salary ${money}`}</p>
+      <p>{`Lives in ${state}, ${country} and his number is ${number} and salary ${salary}`}</p>
       <p>I'm justing learning array destruturing :)</p>
       </header>
     </div>
